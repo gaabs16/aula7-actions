@@ -161,3 +161,8 @@ jobs:
         run: terraform -chdir=infra destroy -auto-approve
         env:
           KOYEB_TOKEN: ${{ secrets.KOYEB_TOKEN }}
+      
+      - name: Delete Koyeb service
+        run: koyeb service delete saudacoes-aleatorias
+        env:
+            KOYEB_TOKEN: ${{ secrets.KOYEB_TOKEN }}
